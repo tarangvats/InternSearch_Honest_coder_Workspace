@@ -11,26 +11,24 @@ int main(void)
 	}
 	int k;
 	scanf("%d",&k);
-	
+	int t = arr[0];
 	for(int j = 0 ; j<n ;j++)
 	{  
-		int t = arr[j]+k;
-		int l = 0;
-	    for(int i=0 ; i<n ; i++)
-	       {
-		      if(t<arr[i])
-		      {
-		      	printf("false ");
-		        l=1;	
-		      	break ;
-		      	
-		      }
-		      else
-		    	l=0;
-		    }
-		  if(l==0)
-			printf("true ");
-		
+		if(arr[j]>t)
+			t = arr[j];
+	}
+	int arry[n];
+	for(int i = 0 ;i<n ;i++)
+	{
+		arry[i] = arr[i] + k ;
+	}
+	
+	for(int i = 0 ; i<n ; i++)
+	{
+		if(arry[i]>=t)
+			printf("True ");
+		else
+			printf("False ");
 	}
 	return 0;
 }
